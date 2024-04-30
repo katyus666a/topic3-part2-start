@@ -78,10 +78,10 @@ private fun AppDrawerHeader() {
         id = R.string.account
       )
     )
-  Text(
-    text = stringResource(R.string.default_username),
-    color = MaterialTheme.colors.primaryVariant
-  )
+    Text(
+      text = stringResource(R.string.default_username),
+      color = MaterialTheme.colors.primaryVariant
+    )
     ProfileInfo()
   }
   Divider(
@@ -104,14 +104,14 @@ fun ProfileInfo(modifier: Modifier =Modifier) {
     val colors = MaterialTheme.colors
 
     ProfileInfoItem(
-     Icons.Filled.Star,
+      Icons.Filled.Star,
       R.string.default_karma_amount,
       R.string.karma,
       modifier = modifier.constrainAs(karmaItem) {
         centerVerticallyTo(parent)
         start.linkTo(parent.start)
       }
-      )
+    )
     Divider(
       modifier = modifier
         .width(1.dp)
@@ -158,7 +158,7 @@ private fun ProfileInfoItem(
           start.linkTo(parent.start)
         }
         .padding(start = 16.dp)
-      )
+    )
     Text(
       text = stringResource(amountResourceId),
       color = colors.primaryVariant,
@@ -199,14 +199,14 @@ private fun AppDrawerBody(closeDrawerAction: () -> Unit) {
       icon = Icons.Filled.AccountBox,
       label = stringResource(R.string.my_profile),
       onClickAction = {
-      closeDrawerAction()
+        closeDrawerAction()
       }
     )
     ScreenNavigationButton(
       icon = Icons.Filled.Home,
       label = stringResource(R.string.saved),
       onClickAction = {
-      closeDrawerAction()
+        closeDrawerAction()
       }
     )
   }
@@ -259,9 +259,7 @@ private fun ScreenNavigationButton(
   }
 }
 
-/**
- * Представляет компонент настройки в панели приложений.
- */
+
 @Composable
 private fun AppDrawerFooter(modifier: Modifier = Modifier) {
   //TODO add your code here
@@ -287,7 +285,7 @@ private fun AppDrawerFooter(modifier: Modifier = Modifier) {
         id = R.string.settings
       ),
       tint = colors.primaryVariant
-      )
+    )
     Text(
       fontSize = 10.sp,
       text = stringResource(R.string.settings),
@@ -299,7 +297,7 @@ private fun AppDrawerFooter(modifier: Modifier = Modifier) {
           start.linkTo(settingsImage.end)
           centerVerticallyTo(settingsImage)
         }
-      )
+    )
     Icon(
       imageVector = ImageVector.vectorResource(id = R.drawable.ic_moon),
       contentDescription = stringResource(id = R.string.change_theme),
@@ -311,12 +309,14 @@ private fun AppDrawerFooter(modifier: Modifier = Modifier) {
         },
       tint = colors.primaryVariant
     )
+
   }
 }
 
 private fun changeTheme() {
   RedditThemeSettings.isInDarkTheme.value = RedditThemeSettings.isInDarkTheme.value.not()
 }
+
 
 @Preview
 @Composable
