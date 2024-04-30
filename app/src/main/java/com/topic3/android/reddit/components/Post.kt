@@ -197,6 +197,19 @@ fun VotingAction(
   onDownVoteAction: () -> Unit
 ) {
   //TODO add your code here
+  Row(verticalAlignment = Alignment.CenterVertically) {
+    ArrowButton(
+      onUpVoteAction,
+      R.drawable.ic_baseline_arrow_upward_24
+    )
+    Text(
+      text = text,
+      color = Color.Gray,
+      fontWeight = FontWeight.Medium,
+      fontSize = 12.sp
+    )
+    ArrowButton(onDownVoteAction, R.drawable.ic_baseline_arrow_downward_24)
+  }
 }
 
 @Composable
@@ -228,6 +241,16 @@ fun PostAction(
 @Composable
 fun ArrowButtonPreview() {
   ArrowButton({}, R.drawable.ic_baseline_arrow_upward_24)
+  IconButton(onClick = onClickAction,
+    modifier = Modifier.size(30.dp)) {
+    Icon(
+      imageVector = ImageVector.vectorResource(arrowResourceId),
+      contentDescription = stringResource(id = R.string.upvote),
+      modifier = Modifier.size(20.dp),
+      tint = Color.Gray
+    )
+  }
+
 }
 
 @Preview
