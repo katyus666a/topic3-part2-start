@@ -253,16 +253,6 @@ fun PostAction(
 @Composable
 fun ArrowButtonPreview() {
   ArrowButton({}, R.drawable.ic_baseline_arrow_upward_24)
-  IconButton(onClick = onClickAction,
-    modifier = Modifier.size(30.dp)) {
-    Icon(
-      imageVector = ImageVector.vectorResource(arrowResourceId),
-      contentDescription = stringResource(id = R.string.upvote),
-      modifier = Modifier.size(20.dp),
-      tint = Color.Gray
-    )
-  }
-
 }
 
 @Preview
